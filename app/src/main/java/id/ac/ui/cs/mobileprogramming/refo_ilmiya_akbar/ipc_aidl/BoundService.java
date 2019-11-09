@@ -8,8 +8,6 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.Chronometer;
 
-import id.ac.ui.cs.mobileprogramming.refo_ilmiya_akbar.ipc_aidl.IBoundService;
-
 public class BoundService extends Service {
     private static String LOG_TAG = "BoundService";
     private Chronometer mChronometer;
@@ -21,7 +19,7 @@ public class BoundService extends Service {
         }
 
         @Override
-        public String getTimestamp() throws RemoteException {
+        public String getTimestamp() {
             long elapsedMillis = SystemClock.elapsedRealtime()
                     - mChronometer.getBase();
             int hours = (int) (elapsedMillis / 3600000);
